@@ -1,13 +1,80 @@
-# Image Grayscale and Binarization Python
+# Image Processing Script
 
-## 📄 Description 
-This is a project in progress which aims to implement a custom script for image processing in Python, <img align="right" src="https://media2.giphy.com/media/GoA7ZlBI2UfmGbf7Zy/giphy.webp?cid=790b7611qwtowwa2dl5tcupub2sfjljgoz56v900d1gboep3&ep=v1_stickers_search&rid=giphy.webp&ct=s" height="150" alt="Work in progress GIF">
-without using external libraries.  The main goal is to convert a colored image into:
-- **Grayscale levels** (0 to 255)
-- **Binarized image** (black and white, 0 and 255)
-The implementation must follow the principles proposed in class, focusing on building a custom function for the transformations.
+## **Description**
+This Python script processes images by converting them into grayscale and binary (black-and-white) formats. The processed images are organized into structured output folders for easier management and use.
 
----
+## **Features**
+- Converts images from RGB (color) to grayscale.
+- Applies binarization using a threshold to produce black-and-white images.
+- Organizes output into structured folders within a new folder named after the original input folder.
 
-## 👨‍💻 Author
-João Augusto
+## **Requirements**
+Ensure you have the following installed:
+- Python 3.7+
+- Required libraries:
+  - Pillow
+  - NumPy
+
+### Install the Required Libraries
+Use the following commands to install the required libraries:
+```bash
+pip install pillow numpy
+```
+
+## **How to Use**
+1. **Run the script**:
+   - Execute the script using Python in your terminal or code editor.
+```bash
+python imageprocessing.py
+```
+
+2. **Select the input folder**:
+   - A dialog box will open for you to select the folder containing the images to process.
+
+3. **Processed images**:
+   - The script will create a new folder named after the input folder with the suffix `processed`.
+   - Inside this folder, two subfolders will be created:
+     - `Grayscale`: Contains images converted to grayscale.
+     - `B&W`: Contains images converted to black and white (binary).
+
+## **Folder Structure**
+The processed images will follow this structure:
+```
+/dataset
+  /input_folder
+    image1.jpg
+    image2.jpg
+  /input_folder processed
+    /Grayscale
+      image1.jpg
+      image2.jpg
+    /B&W
+      image1.jpg
+      image2.jpg
+```
+
+## **Adjusting Parameters**
+- **Threshold for Binarization**:
+  - The default threshold is `128`.
+  - To modify it, adjust the `threshold` parameter in the `binarize_image` function:
+    ```python
+    binarize_image(input_image_path, output_folder, threshold=your_value)
+    ```
+
+## **Example Execution**
+1. **Input Folder:**
+   - `/dataset/images`
+
+2. **Output Folder:**
+   - `/dataset/images processadas`
+     - `/Grayscale`
+     - `/B&W`
+
+3. **Output Example:**
+   - Grayscale and binarized versions of all images will appear in the respective subfolders.
+
+## **Author**
+- João Augusto 
+
+Feel free to enhance or adapt this script for your needs! 🚀
+Your feedback will always be important for my learning.
