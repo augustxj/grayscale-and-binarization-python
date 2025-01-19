@@ -73,6 +73,10 @@ The processed images will follow this structure:
 3. **Output Example:**
    - Grayscale and binarized versions of all images will appear in the respective subfolders.
 
+## Next Updates:
+
+The next update will focus on creating a standalone executable (.exe) and a user interface to make the script more user-friendly and eliminate the need for Python or additional libraries.
+
 ## **Author**
 - João Augusto 
 
