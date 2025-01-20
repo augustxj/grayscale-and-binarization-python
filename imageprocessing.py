@@ -72,36 +72,48 @@ def open_folder(folder_path):
     elif platform.system() == "Linux":  # For Linux
         os.system(f"xdg-open {folder_path}")
 
-#main program
-print("Please select the folder with the images.")
-folder_path = askdirectory()
+#main func
+def main():
+    print("Please select the folder with the images.")
+    folder_path = askdirectory()
 
-if folder_path: #check if a folder was selected
-    #use folder creation func
-    processed_base = folder_create(folder_path)
+    if folder_path: #check if a folder was selected
+        #use folder creation func
+        processed_base = folder_create(folder_path)
 
-    #use image getting func
-    image_files = get_image_files(folder_path)
-    print(f"Found {len(image_files)} image(s):")
+        #use image getting func
+        image_files = get_image_files(folder_path)
+        print(f"Found {len(image_files)} image(s):")
 
-    #process images  
-    for img in image_files:
-        print(f"processing {img}...")
+        #process images  
+        for img in image_files:
+            print(f"processing {img}...")
 
-        #convert to grayscale
-        grayscale_folder = os.path.join(processed_base, "Grayscale")
-        image_process(img, grayscale_folder)
-        print(f"Saved grayscale version of {os.path.basename(img)}.")
+            #convert to grayscale
+            grayscale_folder = os.path.join(processed_base, "Grayscale")
+            image_process(img, grayscale_folder)
+            print(f"Saved grayscale version of {os.path.basename(img)}.")
 
-        #convert to binary
-        binary_folder = os.path.join(processed_base, "B&W")
-        binarize_image(os.path.join(grayscale_folder, os.path.basename(img)), binary_folder)
+            #convert to binary
+            binary_folder = os.path.join(processed_base, "B&W")
+            binarize_image(os.path.join(grayscale_folder, os.path.basename(img)), binary_folder)
 
-        print(f"Processed {os.path.basename(img)}.")
-        
-    #open the folder after done with the images
-    open_folder(processed_base)
-    print("All images processed. Folder opened!")
+            print(f"Processed {os.path.basename(img)}.")
+            
+        #open the folder after done with the images
+        open_folder(processed_base)
+        print("All images processed. Folder opened!")
 
-else:
-    print("No folder was selected.")
+    else:
+        print("No folder was selected.")
+
+#body
+while True:
+    main()
+    answer = input("Do you want to process another folder? (Y/N): ").strip().lower()
+    if answer == "n":
+        print("Exiting the program. Goodbye!")
+        break  # Sai do loop principal
+    elif answer != "y":
+        print("Invalid input. Please answer Y or N.")
+exit()
