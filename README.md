@@ -3,6 +3,9 @@
 ## **Description**
 This Python script processes images by converting them into grayscale and binary (black-and-white) formats. The processed images are organized into structured output folders for easier management and use.
 
+![Teste de imagem](https://github.com/augustxj/grayscale-and-binarization-python/blob/main/result%20example.png?raw=true)
+
+
 ## **Features**
 - Converts images from RGB (color) to grayscale.
 - Applies binarization using a threshold to produce black-and-white images.
