@@ -1,12 +1,11 @@
 # Importando bibliotecas necessárias
 import os
-import shutil
 import numpy as np
 import platform
 from tkinter.filedialog import askdirectory
 from PIL import Image
 
-# Função para criar as pastas de saída (cinza e preto_e_branco)
+# Function to create the output folders
 def folder_create(folder_path):
     # Get the parent directory and the original folder name
     parent_dir, original_folder = os.path.split(folder_path)
@@ -28,7 +27,7 @@ def folder_create(folder_path):
 
 #Function to read the folder files
 def get_image_files(folder_path):
-    valid_extensions = (".jpg", "jpeg",".png",".bmp",".tiff")
+    valid_extensions = (".jpg", "jpeg",".png",".bmp",".tiff",".JPG")
     image_files = [] #empty list to store all valid image files
     with os.scandir(folder_path) as it:
         for entry in it:
