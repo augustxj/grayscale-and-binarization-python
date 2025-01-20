@@ -1,4 +1,4 @@
-# Importando bibliotecas necessárias
+# Libraries
 import os
 import numpy as np
 import platform
