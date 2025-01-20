@@ -66,7 +66,7 @@ The processed images will follow this structure:
    - `/dataset/images`
 
 2. **Output Folder:**
-   - `/dataset/images processadas`
+   - `/dataset/images processed`
      - `/Grayscale`
      - `/B&W`
 
